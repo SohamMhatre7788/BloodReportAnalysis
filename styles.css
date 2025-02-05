@@ -1,0 +1,163 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Navigation */
+nav {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+nav a:hover {
+    color: #4a90e2;
+}
+
+/* Forms */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.error {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+/* Buttons */
+.button,
+button,
+.btn {
+    background-color: #4a90e2;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.button:hover,
+button:hover,
+.btn:hover {
+    background-color: #357ab8;
+}
+
+/* Tables */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table thead {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.normal {
+    color: green;
+}
+
+.abnormal {
+    color: red;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .header h1 {
+        font-size: 1.5em;
+    }
+}

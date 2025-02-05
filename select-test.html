@@ -1,0 +1,53 @@
+<!-- select-test.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Select Test</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="select-test.html">Select Test</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <form id="testForm" onsubmit="handleTestSelection(event)">
+            <div class="form-group">
+                <label for="test">Choose a Test:</label>
+                <select id="test" required>
+                    <option value="" disabled selected>Select a test</option>
+                    <option value="wbc">WBC Test</option>
+                    <option value="cholesterol">Cholesterol Test</option>
+                    <option value="fbc">Full Blood Count</option>
+                    <option value="kidney">Kidney Function Test</option>
+                    <option value="liver">Liver Function Test</option>
+                </select>
+            </div>
+            <button type="submit">Next</button>
+        </form>
+    </div>
+    <div class="footer">
+        &copy; 2023 Blood Report Analyzer
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function handleTestSelection(event) {
+            event.preventDefault();
+            const selectedTest = document.getElementById('test').value;
+            if (!selectedTest) {
+                alert('Please select a test.');
+                return;
+            }
+            window.location.href = 'input.html?test=' + selectedTest;
+        }
+    </script>
+</body>
+</html>

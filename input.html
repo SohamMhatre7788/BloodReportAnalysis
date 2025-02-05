@@ -1,0 +1,109 @@
+<!-- input.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Your Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Enter Your Data</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="select-test.html">Select Test</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <form id="inputForm">
+            <!-- Hidden input to store the test type -->
+            <input type="hidden" id="test" value="">
+            
+            <!-- WBC Test Fields -->
+            <div id="wbc-fields" class="test-fields hidden">
+                <div class="form-group">
+                    <label for="neutrophils">Neutrophils (%):</label>
+                    <input type="number" id="neutrophils" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="lymphocytes">Lymphocytes (%):</label>
+                    <input type="number" id="lymphocytes" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="monocytes">Monocytes (%):</label>
+                    <input type="number" id="monocytes" min="0" max="100" required>
+                </div>
+            </div>
+            
+            <!-- Cholesterol Test Fields -->
+            <div id="cholesterol-fields" class="test-fields hidden">
+                <div class="form-group">
+                    <label for="total-cholesterol">Total Cholesterol (mg/dL):</label>
+                    <input type="number" id="total-cholesterol" required>
+                </div>
+                <div class="form-group">
+                    <label for="hdl">HDL Cholesterol (mg/dL):</label>
+                    <input type="number" id="hdl" required>
+                </div>
+            </div>
+            
+            <!-- Full Blood Count Fields -->
+            <div id="fbc-fields" class="test-fields hidden">
+                <div class="form-group">
+                    <label for="hemoglobin">Hemoglobin (g/dL):</label>
+                    <input type="number" id="hemoglobin" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="rbc">RBC Count (million cells/uL):</label>
+                    <input type="number" id="rbc" step="0.01" required>
+                </div>
+            </div>
+            
+            <!-- Kidney Function Test Fields -->
+            <div id="kidney-fields" class="test-fields hidden">
+                <div class="form-group">
+                    <label for="creatinine">Serum Creatinine (mg/dL):</label>
+                    <input type="number" id="creatinine" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age (years):</label>
+                    <input type="number" id="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="sex">Sex:</label>
+                    <select id="sex" required>
+                        <option value="" disabled selected>Select sex</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Liver Function Test Fields -->
+            <div id="liver-fields" class="test-fields hidden">
+                <div class="form-group">
+                    <label for="bilirubin">Bilirubin (mg/dL):</label>
+                    <input type="number" id="bilirubin" step="0.1" required>
+                </div>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="footer">
+        &copy; 2023 Blood Report Analyzer
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Get test from query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const test = urlParams.get('test');
+        document.getElementById('test').value = test;
+        showFields();
+    </script>
+</body>
+</html>
